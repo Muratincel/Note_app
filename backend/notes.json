@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1741532380666,
+    "title": "Express.js",
+    "content": "-framework for node.js\n-it is defining the routes GET, POST, PUT.. etc. and handling incoming http requests\n-managing request and response, creating API simpler"
+  },
+  {
+    "id": 1741532385686,
+    "title": "Gangplank",
+    "content": "another"
+  },
+  {
+    "id": 1741532401001,
+    "title": "vayne",
+    "content": "hitting me is like boxing with shadows !"
+  },
+  {
+    "id": 1741556203362,
+    "title": "GET",
+    "content": "Retrieves data from the server. For example, fetching a list of notes. GET requests are safe (they don’t modify any data) and can be cached."
+  },
+  {
+    "id": 1741558068256,
+    "title": "POST",
+    "content": "Sends data to the server to create a new resource. When you add a new note, you typically use a POST request. This method can change the state of the server (like adding new data)."
+  },
+  {
+    "id": 1741558080156,
+    "title": "PUT",
+    "content": "Updates an existing resource by replacing it entirely. For instance, if you update a note’s title and content, you might use a PUT request. It’s usually used when you have a complete new version of the resource.\n\n"
+  },
+  {
+    "id": 1741558090610,
+    "title": "DELETE",
+    "content": "Removes a resource from the server. When you delete a note, a DELETE request is sent to remove that note from the backend.\n\n"
+  },
+  {
+    "id": 1741560181993,
+    "title": "list test",
+    "content": "lets\ntest\nthis\nlist"
+  }
+]

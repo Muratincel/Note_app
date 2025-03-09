@@ -1,0 +1,203 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* App.css */
+.app-container {
+  max-width: 600px;
+  margin: 0 auto; /* Centers the container horizontally */
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.form-container {
+  margin-bottom: 30px;
+}
+
+.input-title,
+.textarea-content {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.textarea-content {
+  height: 100px;
+  resize: vertical;
+}
+
+.btn-add {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn-add:hover {
+  background-color: #0056b3;
+}
+
+.notes-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.note-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 15px;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-title {
+  color: #007BFF;
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.note-title:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* Button group for update and delete buttons */
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Update button styling */
+.btn-update {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #28a745; /* Green color */
+  transition: color 0.3s;
+}
+
+.btn-update:hover {
+  color: #1e7e34;
+}
+
+/* Delete button styling */
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.btn-delete:hover {
+  color: darkred;
+}
+
+/* Inline update form styling */
+.update-form {
+  margin-top: 10px;
+}
+
+.input-edit,
+.textarea-edit {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.textarea-edit {
+  height: 80px;
+  resize: vertical;
+}
+
+.btn-save,
+.btn-cancel {
+  padding: 8px 15px;
+  margin-right: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.btn-save {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.btn-save:hover {
+  background-color: #0056b3;
+}
+
+.btn-cancel {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-cancel:hover {
+  background-color: #5a6268;
+}
+
+.note-content {
+  white-space: pre-line;
+}
