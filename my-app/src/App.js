@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 
-
 function App() {
   const [notes, setNotes] = useState([]);
   const [title, setTitle] = useState("");
@@ -41,13 +40,13 @@ function App() {
   const deleteNote = (id) => {
     axios.delete(`http://localhost:5000/notes/${id}`)
       .then(() => {
-        setNotes(notes.filter(note => note.id !== id));
+        setNotes(notes.filter(note => note._id !== id));
       })
       .catch(error => console.error("Error deleting note:", error));
   };
 
   const handleEdit = (note) => {
-    setEditingNoteId(note.id);
+    setEditingNoteId(note._id);
     setEditingTitle(note.title);
     setEditingContent(note.content);
   };
@@ -61,7 +60,7 @@ function App() {
   const updateNote = (noteId) => {
     axios.put(`http://localhost:5000/notes/${noteId}`, { title: editingTitle, content: editingContent })
       .then(response => {
-        setNotes(notes.map(note => note.id === noteId ? response.data : note));
+        setNotes(notes.map(note => note._id === noteId ? response.data : note));
         cancelEdit();
       })
       .catch(error => console.error("Error updating note:", error));
@@ -93,10 +92,10 @@ function App() {
         ) : (
           <ul>
             {notes.map(note => (
-              <li key={note.id} className="note-item">
+              <li key={note._id} className="note-item">
                 <div className="note-header">
                   <h2
-                    onClick={() => toggleNote(note.id)}
+                    onClick={() => toggleNote(note._id)}
                     className="note-title"
                     title="Click to expand/collapse note"
                   >
@@ -112,7 +111,7 @@ function App() {
                     </button>
                     <button
                       className="btn-delete"
-                      onClick={() => deleteNote(note.id)}
+                      onClick={() => deleteNote(note._id)}
                       title="Click to delete note"
                     >
                       X
@@ -120,9 +119,11 @@ function App() {
                   </div>
                 </div>
                 {/* Show note content if expanded */}
-                {expandedNotes.includes(note.id) && (<p className="note-content" >{note.content}</p>)}
+                {expandedNotes.includes(note._id) && (
+                  <p className="note-content">{note.content}</p>
+                )}
                 {/* Inline update form */}
-                {editingNoteId === note.id && (
+                {editingNoteId === note._id && (
                   <div className="update-form">
                     <input
                       type="text"
@@ -135,7 +136,7 @@ function App() {
                       onChange={(e) => setEditingContent(e.target.value)}
                       className="textarea-edit"
                     />
-                    <button onClick={() => updateNote(note.id)} className="btn-save">
+                    <button onClick={() => updateNote(note._id)} className="btn-save">
                       Save
                     </button>
                     <button onClick={cancelEdit} className="btn-cancel">
@@ -151,6 +152,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
